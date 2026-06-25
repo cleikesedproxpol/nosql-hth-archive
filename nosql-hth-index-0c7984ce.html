@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 知识式产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e1e1e;
+      line-height: 1.75;
+      padding: 3rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 标题层级 – 偏知识型，克制且有节奏 */
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 450;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin: 0 0 0.15rem 0;
+      color: #111;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b6b6b;
+      margin-bottom: 2.5rem;
+      font-weight: 380;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 420;
+      letter-spacing: -0.01em;
+      margin: 2.2rem 0 0.75rem 0;
+      color: #1a1a1a;
+      border-left: 3px solid #d4d4d4;
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 430;
+      margin: 1.6rem 0 0.4rem 0;
+      color: #2e2e2e;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      font-size: 0.975rem;
+      color: #2c2c2c;
+    }
+
+    a {
+      color: #166534;
+      text-decoration: none;
+      border-bottom: 1px solid #b6d7b6;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: #0f4d2a;
+      border-bottom-color: #166534;
+    }
+
+    .summary-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+      margin: 2rem 0 2.4rem 0;
+      border: 1px solid #f0f0f0;
+    }
+
+    .summary-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.8rem 0 2rem 0;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.25rem 1.2rem;
+      border: 1px solid #efefef;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 470;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      color: #1b3b2b;
+    }
+
+    .feature-item span {
+      font-size: 0.9rem;
+      color: #4a4a4a;
+      line-height: 1.5;
+    }
+
+    .scenario-block {
+      background: #f7f7f5;
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.5rem 0 1.8rem 0;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #6b6b6b;
+      background: #f3f2ef;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 0.2rem;
+    }
+
+    .faq-mini {
+      margin: 2.2rem 0 1.8rem 0;
+      border-top: 1px solid #eaeaea;
+      padding-top: 1.5rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.7rem;
+      border-bottom: 1px dashed #e2e2e2;
+      padding-bottom: 0.6rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 430;
+      cursor: pointer;
+      color: #1f3f2a;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini details p {
+      margin: 0.5rem 0 0.2rem 0.5rem;
+      font-size: 0.9rem;
+      color: #3b3b3b;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 2.2rem 0 1.2rem 0;
+    }
+
+    .footer-note {
+      font-size: 0.8rem;
+      color: #8a8a8a;
+      text-align: center;
+      border-top: 1px solid #eee;
+      padding-top: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 2rem 1rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      .summary-card {
+        padding: 1.25rem 1.2rem;
+      }
+      .scenario-block {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <h1>华体会 · 查询·对照·延伸</h1>
+    <div class="subhead">一份偏向日常使用场景的产品说明</div>
+
+    <!-- 摘要 / 定位 -->
+    <div class="summary-card">
+      <p><strong>华体会</strong> 是一个围绕体育资讯、赛事数据与内容聚合的信息平台。它并非简单的比分工具，而是为那些习惯在赛前做功课、赛后做复盘的用户提供了一种更连续的信息浏览方式。从联赛积分到球员动态，从战术分析到历史交锋，<a href="https://nosql-hth.com.cn">华体会</a> 尝试将碎片化的内容收拢为可对照的条目，便于快速定位与延伸阅读。</p>
+      <p>以下从日常使用者的视角，梳理其特点、适用场景以及几点克制的提示。</p>
+    </div>
+
+    <!-- 亮点 / 产品特点  知识型描述 -->
+    <h2>▸ 几个值得留意的能力</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>多源对照</strong>
+        <span>同一赛事的不同数据源（文字直播、统计表、摘要）并列呈现，省去多标签切换的麻烦。</span>
+      </div>
+      <div class="feature-item">
+        <strong>条目式检索</strong>
+        <span>按联赛、球队、赛季等维度组织内容，适合先概览再下钻的阅读习惯。</span>
+      </div>
+      <div class="feature-item">
+        <strong>关联延伸</strong>
+        <span>每场比赛页附带过往交锋、近期走势、球员对比，方便做对照分析。</span>
+      </div>
+      <div class="feature-item">
+        <strong>轻量记录</strong>
+        <span>支持收藏特定对阵或文章，形成个人关注列表，便于后续回溯。</span>
+      </div>
+    </div>
+
+    <!-- 使用建议 / 场景 -->
+    <h2>▸ 日常可以怎么用</h2>
+    <div class="scenario-block">
+      <p><strong>赛前查询：</strong> 周末准备看几场焦点战，先打开 <a href="https://nosql-hth.com.cn">华体会</a> 浏览首发预测、伤停情况以及近五场数据。不用翻遍社交媒体，一个页面基本覆盖所需信息。</p>
+      <p><strong>赛中对照：</strong> 直播时同步打开统计面板，看控球率、射门分布的变化趋势，比只看比分更有沉浸感。</p>
+      <p><strong>赛后延伸：</strong> 比赛结束后通过“相关阅读”板块查看战术拆解或赛后采访，把一场比赛的观感延续成更完整的理解。</p>
+      <p class="note">以上场景均基于个人使用习惯，实际效果因人而异。</p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <h2>▸ 关于使用的几句实在话</h2>
+    <p>平台提供的所有数据及资讯均来自公开渠道或授权合作方，更新频率与准确度受限于上游信息源。建议将 <a href="https://nosql-hth.com.cn">华体会</a> 作为信息参考之一，而非唯一决策依据。尤其涉及投注、医疗、法律等专业领域，请务必以官方或权威机构发布为准。</p>
+    <p>另外，部分高级功能（如历史数据导出、自定义对比模板）可能需要注册或登录，具体以实际页面说明为准。网络环境也可能影响加载速度，建议在稳定的连接下使用。</p>
+
+    <!-- FAQ 摘要（克制且真实） -->
+    <div class="faq-mini">
+      <h3 style="border-left: none; padding-left:0; margin-top:0;">常见疑问（简短版）</h3>
+      <details>
+        <summary>数据更新频率如何？</summary>
+        <p>联赛进行期间通常实时或延迟数分钟，杯赛、友谊赛等次级赛事更新节奏稍慢。</p>
+      </details>
+      <details>
+        <summary>是否需要付费？</summary>
+        <p>浏览基础内容免费。部分增值服务（如深度报告、去广告）可能包含付费选项，但不影响日常查询。</p>
+      </details>
+      <details>
+        <summary>移动端体验怎样？</summary>
+        <p>页面适配手机浏览器，横竖屏均可正常阅读。如果需要更专注的移动体验，可以添加到主屏幕。</p>
+      </details>
+    </div>
+
+    <hr>
+
+    <!-- 收尾 – 自然嵌入链接，且无“进入点击”等词 -->
+    <p style="font-size:0.95rem;">如果你对赛事数据与信息梳理有持续需求，不妨将 <a href="https://nosql-hth.com.cn">华体会</a> 放入书签，下次查赛程或做对比时能少花一点整理时间。</p>
+
+    <div class="footer-note">
+      产品说明 · 基于公开信息整理 · 内容仅供参考
+    </div>
+
+  </div>
+</body>
+</html>
